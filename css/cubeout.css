@@ -410,7 +410,7 @@ option.button {
         text-shadow: none;
 }
 
-@media screen and (min-height: 320px) and (max-height: 450px) and (orientation: landscape) {
+@media screen and (min-height: 230px) and (max-height: 450px) and (orientation: landscape) {
         #screenwrap {
                 max-height: 100vh;
                 overflow-y: none;
