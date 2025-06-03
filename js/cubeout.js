@@ -298,7 +298,7 @@ window.onload = (event) => {
           STATE.new_matrix
         );
         if (
-          !is_overlap_layers(nvoxels, PIT_WIDTH, PIT_HEIGHT, PIT_DEPTH, LAYERS)
+          !is_overlap_layers(nvoxels, PIT_WIDTH, PIT_HEIGHT, PIT_, LAYERS)
         ) {
           STATE.new_x += dx;
           STATE.new_y += dy;
@@ -317,7 +317,7 @@ window.onload = (event) => {
           STATE.new_z,
           STATE.new_matrix
         );
-        var deltas = overlap_diff(nvoxels, PIT_WIDTH, PIT_HEIGHT, PIT_DEPTH);
+        var deltas = overlap_diff(nvoxels, PIT_WIDTH, PIT_HEIGHT, PIT_);
         STATE.new_x += deltas[0];
         STATE.new_y += deltas[1];
         STATE.new_z += deltas[2];
@@ -325,6 +325,29 @@ window.onload = (event) => {
         anim_flag = 1;
       }
 
+document.getElementById('startGameBtn').addEventListener('click', function() {
+  const depth = parseInt(document.getElementById('pitDepth').value, 10);
+  const width = parseInt(document.getElementById('pitWidth').value, 10);
+  const length = parseInt(document.getElementById('pitLength').value, 10);
+
+  // Validera inmatningen
+  if (
+    depth >= 6 && depth <= 18 &&
+    width >= 3 && width <= 7 &&
+    length >= 3 && length <= 7
+  ) {
+    // Anropa funktionen för att initiera spelet med de valda dimensionerna
+    initGame(depth, width, length);
+  } else {
+    alert('Vänligen ange giltiga dimensioner för gropen.');
+  }
+});
+
+
+
+
+
+	    
       if (drop_flag) {
         for (var i = 0; i < PIT_DEPTH; ++i) {
           nvoxels = project_voxels(
