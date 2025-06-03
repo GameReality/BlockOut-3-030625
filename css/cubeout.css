@@ -269,6 +269,26 @@ h1 a:hover {
         margin: 0 0.1em 0 0.1em;
 }
 
+.pit-settings {
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  display: inline-block;
+  background-color: #f9f9f9;
+}
+
+.pit-settings label {
+  display: block;
+  margin-top: 10px;
+}
+
+.pit-settings input {
+  width: 60px;
+  margin-left: 10px;
+}
+
+
+
 #speed {
         margin: 0 0.1em 0 0.1em;
 }
